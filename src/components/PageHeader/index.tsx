@@ -8,6 +8,7 @@ import './styles.css'
 
 interface PageHeaderProps {
     title: string;
+    description?: string;
     /*title?: string; > seria não obrigatorio*/
 }
 /*Eu tenho um componente 'PageHeader' ele é um 'React.FC ou Funcion Compani' e dentro do <> ele recebe as propriedades*/
@@ -23,6 +24,8 @@ const PageHeader: React.FC<PageHeaderProps> = (props) => { /*Para receber a inte
 
         <div className="header-content">
             <strong>{props.title}</strong>
+            { props.description && <p>{props.description}</p>}
+            {/* Ou { props.description? <p>{props.description}</p> : null } */}
 
         {props.children}
         </div>
